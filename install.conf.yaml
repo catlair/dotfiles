@@ -12,9 +12,6 @@
     # git
     ~/.gitconfig: .gitconfig
 
-    # zsh
-    ~/.zshrc: .zshrc
-
     # vim
     ~/.config/nvim/init.vim: nvim/init.vim
 
@@ -27,13 +24,17 @@
     ~/.config/ranger/config.conf: ranger/config.conf
     ~/.config/ranger/commands.py: ranger/commands.py
 
-    # ranger
+    # neofetch
     ~/.config/neofetch: neofetch
 
-    # ranger
+    # zsh
+    ~/.zshrc: .zshrc
     ~/.config/zsh: zsh
 
     # vscode
     ~/.config/Code/User/snippets: code/snippets
     ~/.config/Code/User/keybindings.json: code/keybindings.json
     ~/.config/Code/User/settings.json: code/settings.json
+
+    # fonts
+    ~/.local/share/fonts/MesloLGS NF: fonts/MesloLGS NF
