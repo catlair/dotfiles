@@ -1,0 +1,256 @@
+/*某些功能可能只适用于vscode-MPE插件*/
+{
+  // 标题
+  // "一级标题": {
+  // 	"prefix": "h1",
+  // 	"body": [
+  // 		"# "
+  // 	],
+  // 	"description": "<h1>"
+  // },
+  // "二级标题": {
+  // 	"prefix": "h2",
+  // 	"body": [
+  // 		"## "
+  // 	],
+  // 	"description": "<h2>"
+  // },
+  // "三级标题": {
+  // 	"prefix": "h3",
+  // 	"body": [
+  // 		"### "
+  // 	],
+  // 	"description": "<h3>"
+  // },
+  // "四级标题": {
+  // 	"prefix": "h4",
+  // 	"body": [
+  // 		"#### "
+  // 	],
+  // 	"description": "<h4>"
+  // },
+  // "五级标题": {
+  // 	"prefix": "h5",
+  // 	"body": [
+  // 		"##### "
+  // 	],
+  // 	"description": "<h5>"
+  // },
+  // "六级标题": {
+  // 	"prefix": "h6",
+  // 	"body": [
+  // 		"###### "
+  // 	],
+  // 	"description": "<h6>"
+  // },
+  // 段落格式
+  /*
+	bold 粗体字 ****
+	*/
+  "删除线": {
+    "prefix": "del",
+    "body": ["~~$1~~"],
+    "description": "<del>"
+  },
+  "斜体字": {
+    "prefix": "i",
+    "body": ["*$1*"],
+    "description": "<i>"
+  },
+  "粗体字": {
+    "prefix": "strong",
+    "body": ["**$1**"],
+    "description": "<strong>"
+  },
+  "粗斜体字": {
+    "prefix": "si",
+    "body": ["***$1***"],
+    "description": "<strong>+<i>"
+  },
+  "分割线": {
+    "prefix": "hr",
+    "body": ["*****"],
+    "description": "<hr>"
+  },
+  "下划线": {
+    "prefix": "u",
+    "body": ["<u>$1</u>"],
+    "description": "<u>"
+  },
+  "脚注": {
+    "prefix": "ps",
+    "body": ["[^${1}]", "[^${1}]:$0"],
+    "description": "底部注明"
+  },
+  //列表
+  /*
+	list 有序无序
+	*/
+  // 链接
+  /*
+	link 超链接
+	*/
+  "高级链接开头": {
+    "prefix": "sl1",
+    "body": ["[$1][$2]"],
+    "description": "高级链接"
+  },
+  "高级链接末尾": {
+    "prefix": "sl2",
+    "body": ["[$1]:https://${2:link}/"],
+    "description": "高级链接"
+  },
+  // 图片
+  /*
+	image 图片 
+	*/
+  "图片": {
+    "prefix": "image",
+    "body": ["![${2:alt}](${1:https://link})"],
+    "description": "图片"
+  },
+  "图片标签": {
+    "prefix": "img",
+    "body": ["<img src=\"${1:http://link}\" width=\"${2:10%}\" height=\"\" />"],
+    "description": "图片"
+  },
+  // 表格
+  "表格2*2": {
+    "prefix": "ta22",
+    "body": ["| $1 | $2 |", "| --- | --- |", "| $3 | $4 |"],
+    "description": "table 2 * 2"
+  },
+  "表格3*2": {
+    "prefix": "ta32",
+    "body": ["| $1 | $2 | $3 |", "| --- | --- | --- |", "| $4 | $5 | $6 |"],
+    "description": "table 2 * 3"
+  },
+  // 代码段
+  /*
+	  code 代码 ``
+	  codeblock 代码段
+	*/
+  "代码段": {
+    "prefix": "sn",
+    "body": ["```$1", "\t$0", "```"],
+    "description": "snippets"
+  },
+  "javascript代码": {
+    "prefix": "js",
+    "body": ["```javascript", "$0", "```"],
+    "description": "javascript"
+  },
+  "SQL代码": {
+    "prefix": "sql",
+    "body": ["```sql", "$0", "```"],
+    "description": "SQL"
+  },
+  "C/C++代码": {
+    "prefix": "cpp",
+    "body": ["```C", "\t$0", "```"],
+    "description": "C/C++"
+  },
+  "HTML代码": {
+    "prefix": "html",
+    "body": ["```html", "\t$0", "```"],
+    "description": "HTML"
+  },
+  "JSX代码": {
+    "prefix": "jsx",
+    "body": ["```jsx", "\t$0", "```"],
+    "description": "HTML"
+  },
+  "CSS代码": {
+    "prefix": "css",
+    "body": ["```css", "\t$0", "```"],
+    "description": "CSS"
+  },
+  "json代码": {
+    "prefix": "json",
+    "body": ["```json", "\t$0", "```"],
+    "description": "JSON"
+  },
+  "Python代码": {
+    "prefix": "py",
+    "body": ["```python", "\t$0", "```"],
+    "description": "Python"
+  },
+  "Java代码": {
+    "prefix": "ja",
+    "body": ["```java", "\t$0", "```"],
+    "description": "java"
+  },
+  "PHP代码": {
+    "prefix": "php",
+    "body": ["```php", "\t$0", "```"],
+    "description": "PHP"
+  },
+  "bash代码": {
+    "prefix": "bash",
+    "body": ["```bash", "\t$0", "```"],
+    "description": "bash"
+  },
+  //任务列表
+  "任务列表": {
+    "prefix": "ch",
+    "body": ["- [${1: }] $0"],
+    "description": "任务列表"
+  },
+  "任务列表勾选": {
+    "prefix": "cr",
+    "body": ["- [ ] $0"],
+    "description": "任务列表勾选"
+  },
+  "任务列表未勾选": {
+    "prefix": "cf",
+    "body": ["- [x] $0"],
+    "description": "任务列表未勾选"
+  },
+  "任务列表2": {
+    "prefix": "ch2",
+    "body": ["- [${1: }] $2", "- [${3: }] $0"],
+    "description": "任务列表2行"
+  },
+  "任务列表勾选2": {
+    "prefix": "cr2",
+    "body": ["- [ ] $1", "- [ ] $0"],
+    "description": "任务列表勾选2行"
+  },
+  "任务列表未勾选2": {
+    "prefix": "cf2",
+    "body": ["- [x] $1", "- [x] $0"],
+    "description": "任务列表未勾选2行"
+  },
+  //导入外部文件 MPE
+  "导入外部文件": {
+    "prefix": "imp",
+    "body": "<!-- @import \"${1:your_file}\" -->",
+    "description": "@import"
+  },
+  "设置图片": {
+    "prefix": "iimg",
+    "body": "<!-- @import \"${1:test.jpg}\" {width=\"${2:100%}\" height=\"\" title=\"${3:图片的标题}\" alt=\"${4:我的 alt}\"} -->",
+    "description": "@import-image"
+  },
+  "导入外部code": {
+    "prefix": "ic",
+    "body": "<!-- @import \"${1:demo.js}\" {cmd=\"${2:javascript}\"} -->",
+    "description": "@import-code"
+  },
+  //个人需求
+  "内部图片": {
+    "prefix": "ima",
+    "body": ["![alt](./images/${1: }.${2:png})"],
+    "description": "图片"
+  },
+  "内部图片png": {
+    "prefix": "png",
+    "body": ["![alt](./images/${1: }.png)"],
+    "description": "图片"
+  },
+  "内部图片gif": {
+    "prefix": "gif",
+    "body": ["![alt](./images/${1: }.gif)"],
+    "description": "图片"
+  }
+}

@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+[user]
+	name = catlair
+	email = catlair@qq.com
+
+#[url "ssh://git@github.com/"]
+#	insteadOf = https://github.com/
+
+#[url "https://github.91chifun.workers.dev//https://github.com/"]
+#  insteadOf = https://github.com/
+  

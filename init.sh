@@ -1,0 +1,13 @@
+rm -rf ~/.config/ranger/rifle.conf
+rm -rf ~/.config/ranger/rc.conf
+rm -rf ~/.config/ranger/config.conf
+rm -rf ~/.config/ranger/commands.py
+rm -rf ~/.config/neofetch
+rm -rf ~/.config/zsh
+rm -rf ~/.config/alacritty
+rm -rf ~/.config/nvim/init.vim
+rm -rf ~/.zshrc
+rm -rf ~/.gitconfig
+rm -rf ~/.config/Code/User/snippets
+rm -rf ~/.config/Code/User/keybindings.json
+rm -rf ~/.config/Code/User/settings.json

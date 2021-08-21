@@ -1,0 +1,125 @@
+//https://code.visualstudio.com/docs/getstarted/settings
+{
+  "security.workspace.trust.enabled": false,
+  "workbench.activityBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.fontLigatures": true, //使用连体字
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', '思源宋体', Consolas, 'MesloLGS NF'", //设置编辑器字体
+  "editor.formatOnSave": true, //保存自动格式化
+  "editor.suggestSelection": "first",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  //"editor.snippetSuggestions": "top", //自定义的代码段位置为置顶
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化软件
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.associations": {
+    ".vuerc": "json",
+    ".sequelizerc": "typescript",
+    ".env": "plaintext",
+    ".prettierrc": "plaintext"
+  },
+  "files.autoSave": "afterDelay", //自动保存方式
+  "workbench.iconTheme": "material-icon-theme", //主题
+  /*窗口样式的配置*/
+  "workbench.colorCustomizations": {
+    "statusBar.debuggingBackground": "#c06f98", //状态栏debug背景色
+    "statusBar.foreground": "#a2b4bd", //状态栏前景色
+    "editorBracketMatch.background": "#5a6f75" //匹配括号背景颜色
+  },
+  "workbench.sideBar.location": "left", //活动栏位置
+  "workbench.statusBar.visible": true,
+  "workbench.startupEditor": "none",
+  "explorer.confirmDragAndDrop": false,
+  "git.ignoreLegacyWarning": true,
+  "git.confirmSync": false,
+  // 使用新的方法会慢半拍？？？
+  // "terminal.integrated.profiles.windows": {
+  //   "Git Bash": {
+  //     "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+  //     "args": ["-l"] // 保留历史记录
+  //   },
+  //   "PowerShell -NoProfile": null,
+  //   "cmd": {
+  //     "path": "C:\\WINDOWS\\System32\\cmd.exe"
+  //   }
+  // },
+  /** 本来应该下面这行就行，不知道为啥出问题，所以加了上面的profiles */
+  // "terminal.integrated.defaultProfile.windows": "Git Bash", // 默认使用
+  /** 还是这个好用（虽然显示废弃） */
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", //默认终端
+  "terminal.integrated.shellArgs.windows": ["-l"],
+  "terminal.integrated.tabs.enabled": false, // 使用新的tab布局（不习惯所以关闭）
+  "debug.console.fontFamily": "Fira Code", //调试控制台的字体
+  // "debug.openDebug": "neverOpen",
+  "emmet.triggerExpansionOnTab": true, //emmet用tab展开
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.excludeLanguages": [], // 要在markdown中使用html必须排除[]
+  "emmet.includeLanguages": {
+    "markdown": "html"
+  },
+  "emmet.variables": {
+    "lang": "zh-CN"
+  },
+  "[markdown]": {
+    "editor.autoIndent": "full",
+    "editor.quickSuggestions": true //允许md使用候选词
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "prettier.singleQuote": true, // 默认使用单引号
+  /*bracket-pair-colorizer-2插件的配置*/
+  "bracket-pair-colorizer-2.showBracketsInGutter": true, //在装订线中显示活动范围括号
+  /*HTML CSS Support插件指定样式表*/
+  "css.fileExtensions": ["css", "scss", "less"],
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "javascript.preferences.quoteStyle": "single",
+  "commentTranslate.targetLanguage": "zh-CN",
+  "less.compile": {
+    "compress": false, // true => remove surplus whitespace
+    "sourceMap": false, // true => generate source maps (.css.map files)
+    "out": "./css/" // false => DON'T output .css files (overridable per-file, see below) //${workspaceRoot}
+  },
+  //NPM 插件
+  "npm-intellisense.importES6": true,
+  "npm-intellisense.importQuotes": "'",
+  "npm-intellisense.importLinebreak": ";\r\n",
+  "npm-intellisense.importDeclarationType": "const",
+  "vsintellicode.features.python.deepLearning": "enabled",
+  "C_Cpp.updateChannel": "Insiders",
+  "winopacity.opacity": 235,
+  "cssrem.rootFontSize": 80,
+  "svg.preview.mode": "svg",
+  "workbench.colorTheme": "Monokai",
+  "editor.linkedEditing": true,
+  "remote.SSH.remotePlatform": {},
+  "remote.SSH.useLocalServer": true
+}

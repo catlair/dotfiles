@@ -1,0 +1,39 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- create:
+    - ~/.config
+
+- link:
+    # git
+    ~/.gitconfig: .gitconfig
+
+    # zsh
+    ~/.zshrc: .zshrc
+
+    # vim
+    ~/.config/nvim/init.vim: nvim/init.vim
+
+    # alacritty
+    ~/.config/alacritty: alacritty
+
+    # ranger
+    ~/.config/ranger/rifle.conf: ranger/rifle.conf
+    ~/.config/ranger/rc.conf: ranger/rc.conf
+    ~/.config/ranger/config.conf: ranger/config.conf
+    ~/.config/ranger/commands.py: ranger/commands.py
+
+    # ranger
+    ~/.config/neofetch: neofetch
+
+    # ranger
+    ~/.config/zsh: zsh
+
+    # vscode
+    ~/.config/Code/User/snippets: code/snippets
+    ~/.config/Code/User/keybindings.json: code/keybindings.json
+    ~/.config/Code/User/settings.json: code/settings.json

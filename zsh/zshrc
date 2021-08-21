@@ -1,0 +1,9 @@
+source ~/.config/zsh/env.zsh
+source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/fzf.zsh
+source ~/.config/zsh/ranger.zsh
+source ~/.config/zsh/zinit.zsh
+source ~/.config/zsh/plugins.zsh
+
+# 加载私密环境变量
+[ ! -f ~/.config/zsh/.local.zsh ] || source ~/.config/zsh/.local.zsh

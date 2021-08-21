@@ -1,0 +1,32 @@
+cursor:
+  style:
+    shape: Underline
+    blinking: Always
+
+background_opacity: 0.85
+
+font:
+  size: 11
+  normal:
+    family: 'MesloLGS NF'
+    style:
+  bold:
+    family: 'MesloLGS NF'
+    style: Bold
+  italic:
+    family: 'MesloLGS NF'
+    style: Italic
+  bold_italic:
+    family: 'MesloLGS NF'
+    style: Bold Italic
+
+window:
+  dimensions:
+    columns: 118
+    lines: 32
+  position:
+    x: 326
+    y: 162
+  padding:
+    x: 4
+    y: 4
