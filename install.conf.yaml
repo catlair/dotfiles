@@ -38,3 +38,8 @@
 
     # fonts
     ~/.local/share/fonts/MesloLGS NF: fonts/MesloLGS NF
+
+    # deepin 标题栏
+    ~/.local/share/deepin/themes/deepin:
+      path: other/deepin
+      if: '[ $DESKTOP_SESSION = deepin ]'
