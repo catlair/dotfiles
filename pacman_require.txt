@@ -3,7 +3,7 @@ bat
 exa
 trash-cli
 neovim
-lua
+zoxide
 chafa
 lesspipe
 ranger
