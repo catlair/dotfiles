@@ -8,15 +8,8 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 # 指定用 fd 搜索（默认 find）并只显示文件
 export FZF_DEFAULT_COMMAND='fd --hidden --type f'
 
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf
-
-# 设置是否加载 fzf 自动补全
-DISABLE_FZF_AUTO_COMPLETION="false"
-# 设置是否禁用按键绑定（CTRL-T、CTRL-R、ALT-C）
-DISABLE_FZF_KEY_BINDINGS="false"
-
-# Options to fzf command
-export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_TMUX=1
+export FZF_TMUX_HEIGHT='80%'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.

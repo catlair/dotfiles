@@ -3,7 +3,10 @@
 zstyle ':fzf-tab:*' ignore 4
 
 # 使用组
-# zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':fzf-tab:*' switch-group '[' ']'
+
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-a:toggle-all' 'tab:toggle-out'
 
 # 补全 cd 时使用 exa 预览其中的内容
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
@@ -47,5 +50,10 @@ zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 export LESSOPEN='|~/.config/zsh/.lessfilter.sh %s'
 
-# 显示隐藏文件
-setopt globdots
+# function j() {
+#     if [[ "$argv[1]" == "-"* ]]; then
+#         _zlua "$@"
+#     else
+#         cd "$@" 2> /dev/null || _zlua "$@"
+#     fi
+# }

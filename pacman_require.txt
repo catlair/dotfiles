@@ -1,0 +1,13 @@
+zsh
+bat
+exa
+trash-cli
+neovim
+lua
+chafa
+lesspipe
+ranger
+ueberzug
+fzf
+fd
+thefuck

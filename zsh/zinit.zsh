@@ -14,20 +14,17 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
 #   ~/.config/zsh/async/nvm.zsh \
 #   ~/.config/zsh/async/fuck.zsh
 
-# Completions
-zinit as"completion" for \
-  OMZP::docker/_docker \
-  OMZP::fd/_fd
-
 zinit light-mode for \
   OMZL::completion.zsh \
   OMZL::key-bindings.zsh
 
 zinit wait"1" light-mode lucid for \
-  OMZP::fzf \
+  OMZP::git \
   OMZP::archlinux \
-  OMZP::autojump \
   OMZP::thefuck
+
+zinit ice lucid wait depth'1' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
+zinit light junegunn/fzf
 
 # Plugins
 zinit wait"1" lucid depth"1" light-mode for \
@@ -37,8 +34,15 @@ zinit wait"1" lucid depth"1" light-mode for \
   djui/alias-tips \
   wfxr/forgit
 
+# zinit wait depth'1' lucid atload'eval \
+#   "$(lua z.lua --init zsh once enhanced)"' for \
+#   skywind3000/z.lua
+
+# 语言支持
+zinit wait lucid depth'1' for \
+  lukechilds/zsh-nvm
+
 # 在 fzf-tab 之前使用
-# zpcompinit; zpcdreplay
 zinit wait lucid depth"1" atload"zicompinit; zicdreplay" for \
   Aloxaf/fzf-tab
 
@@ -49,7 +53,3 @@ zinit wait lucid depth"1" for \
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT="可用别名: "
-export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
-export PRINT_ALIAS_IGNORE_ALIASES=(ls ll rm la vim ra = )

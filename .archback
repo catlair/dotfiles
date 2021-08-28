@@ -1,0 +1,15 @@
+sudo tar -cvpzf backup.tar.gz \
+--exclude=/backup.tar.gz \
+--exclude=/proc \
+--exclude=/tmp \
+--exclude=/mnt \
+--exclude=/dev \
+--exclude=/sys \
+--exclude=/run \
+--exclude=/media \
+--exclude=/var/log \
+--exclude=/var/cache/apt/archives \
+--exclude=/var/cache/pacman/pkg \
+--exclude=/usr/src/linux-headers* \
+--exclude=/swapfile \
+--exclude=/home /

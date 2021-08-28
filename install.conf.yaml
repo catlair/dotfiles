@@ -7,10 +7,11 @@
 
 - create:
     - ~/.config
+    - ~/.config/ranger/plugins
 
 - link:
     # git
-    ~/.gitconfig: .gitconfig
+    ~/.gitconfig: gitconfig
 
     # vim
     ~/.config/nvim/init.vim: nvim/init.vim
@@ -23,12 +24,13 @@
     ~/.config/ranger/rc.conf: ranger/rc.conf
     ~/.config/ranger/config.conf: ranger/config.conf
     ~/.config/ranger/commands.py: ranger/commands.py
+    ~/.config/ranger/plugins/ranger_zlua.py: ranger/plugins/ranger_zlua.py
 
     # neofetch
     ~/.config/neofetch: neofetch
 
     # zsh
-    ~/.zshrc: .zshrc
+    ~/.zshrc: zshrc
     ~/.config/zsh: zsh
 
     # vscode

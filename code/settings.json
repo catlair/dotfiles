@@ -56,8 +56,8 @@
   // "terminal.integrated.defaultProfile.windows": "Git Bash", // 默认使用
   /** 还是这个好用（虽然显示废弃） */
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe", //默认终端
-  "terminal.integrated.shellArgs.windows": ["-l"],
-  "terminal.integrated.tabs.enabled": false, // 使用新的tab布局（不习惯所以关闭）
+  "terminal.integrated.shell.linux": "zsh", //默认终端
+  "terminal.integrated.shellArgs.windows": ["-l"], // 使用新的tab布局（不习惯所以关闭）
   "debug.console.fontFamily": "Fira Code", //调试控制台的字体
   // "debug.openDebug": "neverOpen",
   "emmet.triggerExpansionOnTab": true, //emmet用tab展开
