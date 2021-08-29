@@ -29,6 +29,11 @@ source ~/.config/zsh/zshrc
 # 使用 zsh-nvm 替代
 # zsh-defer -c '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 zsh-defer -c 'eval $(thefuck --alias)'
-zsh-defer -c 'eval "$(zoxide init --no-aliases zsh)"'
+
+if (( $+commands[zoxide] )); then
+  zsh-defer -c 'eval "$(zoxide init --no-aliases zsh)"'
+else
+  echo 'zoxide: command not found, please install it from https://github.com/ajeetdsouza/zoxide'
+fi
 
 # zprof

@@ -45,3 +45,7 @@
     ~/.local/share/deepin/themes/deepin:
       path: other/deepin
       if: '[ $DESKTOP_SESSION = deepin ]'
+
+    # fcitx5
+    ~/.local/share/fcitx5/pinyin/dictionaries: fcitx5/pinyin/dictionaries
+    ~/.config/fcitx5: fcitx5/config

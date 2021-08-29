@@ -3,16 +3,13 @@
 # https://asmcn.icopy.site/awesome/awesome-zsh-plugins/#tutorials
 # https://github.com/Aloxaf/dotfiles/blob/master/zsh/.config/zsh/zshrc.zsh
 
+GH_CDN=https://cdn.jsdelivr.net
+
 zinit light-mode depth"1" for \
   romkatv/zsh-defer
 
-zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+zinit wait lucid depth"1" atload"zicompinit; zicdreplay" blockf for \
   zsh-users/zsh-completions
-
-# # 异步加载
-# zinit wait lucid for \
-#   ~/.config/zsh/async/nvm.zsh \
-#   ~/.config/zsh/async/fuck.zsh
 
 zinit light-mode for \
   OMZL::completion.zsh \
@@ -32,24 +29,22 @@ zinit wait"1" lucid depth"1" light-mode for \
   torifat/npms \
   brymck/print-alias \
   djui/alias-tips \
-  wfxr/forgit
+  wfxr/forgit \
+  Bhupesh-V/ugit
 
 # zinit wait depth'1' lucid atload'eval \
 #   "$(lua z.lua --init zsh once enhanced)"' for \
 #   skywind3000/z.lua
 
-# 语言支持
 zinit wait lucid depth'1' for \
-  lukechilds/zsh-nvm
-
-# 在 fzf-tab 之前使用
-zinit wait lucid depth"1" atload"zicompinit; zicdreplay" for \
-  Aloxaf/fzf-tab
-
-zinit wait lucid depth"1" for \
-  atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-  zdharma/fast-syntax-highlighting
+  as"program" pick"bin/git-fuzzy" bigH/git-fuzzy \
+                                  lukechilds/zsh-nvm \
+  atload"zicompinit; zicdreplay"  Aloxaf/fzf-tab \
+  atload"_zsh_autosuggest_start"  zsh-users/zsh-autosuggestions \
+                                  zdharma/fast-syntax-highlighting
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
+
+unset GH_CDN

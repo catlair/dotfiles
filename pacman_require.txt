@@ -11,3 +11,4 @@ ueberzug
 fzf
 fd
 thefuck
+delta

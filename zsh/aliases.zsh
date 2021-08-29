@@ -29,7 +29,6 @@ PRINT_ALIAS_IGNORE_ALIASES+=(j ji)
 
 if builtin command -v nvim > /dev/null 2>&1 ; then
     alias vim="nvim"
-    alias vi="nvim"
 fi
 
 if builtin command -v trash-put > /dev/null 2>&1 ; then
