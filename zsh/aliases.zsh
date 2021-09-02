@@ -31,11 +31,8 @@ if builtin command -v nvim > /dev/null 2>&1 ; then
     alias vim="nvim"
 fi
 
-if builtin command -v trash-put > /dev/null 2>&1 ; then
-    alias rm="trash-put"
-else
-    alias rm="rm -i"
-fi
+alias trm="trash-put"
+alias rm="rm -i"
 
 if builtin command -v exa > /dev/null 2>&1 ; then
   ## 需要安装 exa
