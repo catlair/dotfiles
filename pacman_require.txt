@@ -11,4 +11,6 @@ ueberzug
 fzf
 fd
 thefuck
-delta
+git-delta-git
+ripgrep
+perl-image-exiftool
