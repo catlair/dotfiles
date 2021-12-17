@@ -1,3 +1,4 @@
+# program
 # https://github.com/rinx/dotfiles/blob/main/zshrc
 
 # 应用程序 开始 -----------
@@ -64,7 +65,6 @@ zinit ice lucid wait"1" from"gh-r" ver"nightly" as"program" \
 zinit light neovim/neovim
 
 zinit ice lucid wait from"gh-r" as"program" \
-                    mv"zoxide-* -> zoxide" \
                     pick"zoxide/zoxide" \
                     atload'eval "$(zoxide init --no-aliases zsh)"'
 zinit light ajeetdsouza/zoxide
