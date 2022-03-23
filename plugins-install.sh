@@ -2,4 +2,4 @@ git clone https://github.com/jchook/ranger-zoxide  ~/.config/ranger/plugins/zoxi
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-      "$GH_CDN/junegunn/vim-plug/plug.vim"
+      "https://raw.sevencdn.com/junegunn/vim-plug/master/plug.vim"

@@ -7,6 +7,12 @@ alias .ra=". ranger"
 
 alias eddot="code ~/.dotfiles"
 
+# npm 
+alias pna="pnpm install"
+alias pnad="pnpm install -D"
+alias yaa="yarn add"
+alias yad="yarn add -D"
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -30,6 +36,8 @@ PRINT_ALIAS_IGNORE_ALIASES+=(j ji)
 if builtin command -v nvim > /dev/null 2>&1 ; then
     alias vim="nvim"
 fi
+
+alias setap='export all_proxy=socks5://localhost:20170/'
 
 alias trm="trash-put"
 alias rm="rm -i"

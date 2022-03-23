@@ -14,13 +14,17 @@ zinit light-mode for \
  OMZL::key-bindings.zsh
 
 zinit wait"1" light-mode lucid for \
+ OMZP::archlinux \
  OMZP::git \
- OMZP::sudo
+ OMZP::sudo \
+ OMZP::encode64 \
+ OMZP::cp
 
 zinit ice lucid wait depth'1' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
 zinit light junegunn/fzf
 
 # Plugins
+# 需要安装 jq 处理 json 数据
 zinit wait"1" lucid depth"1" light-mode for \
   arzzen/calc.plugin.zsh \
   torifat/npms \

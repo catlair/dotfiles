@@ -8,6 +8,7 @@ mv ~/.config/ranger/rifle.conf \
   ~/.config/alacritty \
   ~/.config/nvim/init.vim \
   ~/.zshrc \
+  ~/.p10k.zsh \
   ~/.gitconfig \
   ~/.config/Code/User/snippets \
   ~/.config/Code/User/keybindings.json \

@@ -36,4 +36,7 @@ Plug 'ojroques/vim-scrollstatus'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'RRethy/vim-illuminate'
 
+" Language
+Plug 'mattn/emmet-vim'
+
 call plug#end()
