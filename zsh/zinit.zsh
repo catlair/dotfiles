@@ -18,7 +18,9 @@ zinit wait"1" light-mode lucid for \
  OMZP::git \
  OMZP::sudo \
  OMZP::encode64 \
- OMZP::cp
+ OMZP::cp \
+ OMZP::docker/_docker \
+ OMZP::docker-compose/_docker-compose
 
 zinit ice lucid wait depth'1' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
 zinit light junegunn/fzf

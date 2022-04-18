@@ -6,6 +6,15 @@ export JAVA_HOME=/usr/lib/jvm/java-11-jetbrains
 export PATH=$JAVA_HOME/bin:$PATH
 export BROWSER=/usr/bin/firefox-developer-edition
 export GH_CDN=https://cdn.jsdelivr.net/gh
+export GHPROXY=https://ghproxy.com
+export GOPROXY=https://proxy.golang.com.cn,direct
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 
 # 插件配置
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="可用别名: "
