@@ -1,6 +1,8 @@
 alias sdoc="sudo systemctl start docker.service"
 alias stdoc="sudo systemctl stop docker.service"
 
+alias fsf="fastfetch"
+
 alias c="clear"
 alias ra="ranger"
 alias .ra=". ranger"

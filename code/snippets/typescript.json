@@ -4,9 +4,14 @@
     "body": "'use strict';",
     "description": "严格模式"
   },
-  "Console.log": {
+  "console.log": {
     "prefix": "cl",
     "body": ["console.log($0);"],
+    "description": "打印日志"
+  },
+  "console.log json": {
+    "prefix": "clj",
+    "body": ["console.log(JSON.stringify(${0}, null, 2));"],
     "description": "打印日志"
   },
   "console.error": {

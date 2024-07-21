@@ -35,3 +35,16 @@ if (( $+commands[zoxide] )); then
 fi
 
 # zprof
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export DPRINT_INSTALL="/home/ruomi/.dprint"
+export PATH="$DPRINT_INSTALL/bin:$PATH"
+
+
+# bun completions
+[ -s "/home/ruomi/.bun/_bun" ] && source "/home/ruomi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

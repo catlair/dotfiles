@@ -35,10 +35,11 @@ zinit wait"1" lucid depth"1" light-mode for \
 
 zinit wait lucid depth'1' for \
   as"program" pick"bin/git-fuzzy" bigH/git-fuzzy \
-                                  lukechilds/zsh-nvm \
   atload"zicompinit; zicdreplay"  Aloxaf/fzf-tab \
   atload"_zsh_autosuggest_start"  zsh-users/zsh-autosuggestions \
                                   zdharma-continuum/fast-syntax-highlighting
+
+#                                  lukechilds/zsh-nvm \
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth

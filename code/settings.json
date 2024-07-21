@@ -1,21 +1,22 @@
 //https://code.visualstudio.com/docs/getstarted/settings
 {
-  "security.workspace.trust.enabled": false,
-  "workbench.activityBar.visible": true,
+  "remote.SSH.useLocalServer": true,
   "breadcrumbs.enabled": true,
   "editor.renderWhitespace": "none",
   "editor.fontLigatures": true, //使用连体字
-  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', '思源宋体', Consolas, 'MesloLGS NF'", //设置编辑器字体
+  "editor.fontFamily": "'Fira Code', 'JetBrains Mono', 'Monaspace Neon', monospace, '思源宋体', Consolas, 'MesloLGS NF'", //设置编辑器字体
+  "terminal.integrated.fontFamily": "'Fira Code', 'JetBrains Mono', 'Monaspace Neon', monospace, '思源宋体', Consolas, 'MesloLGS NF'",
   "editor.formatOnSave": true, //保存自动格式化
-  "editor.suggestSelection": "first",
+  "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    // "source.fixAll.stylelint": true,
+    // "source.fixAll.eslint": true
   },
   //"editor.snippetSuggestions": "top", //自定义的代码段位置为置顶
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化软件
-  "editor.fontSize": 16,
-  "editor.tabSize": 2,
+  "editor.fontSize": 16, //设置编辑器字体大小
+  "editor.tabSize": 2, //设置编辑器缩进
   "files.exclude": {
+    //设置编辑器忽略的文件
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
@@ -24,8 +25,10 @@
   "files.associations": {
     ".vuerc": "json",
     ".sequelizerc": "typescript",
-    ".env": "plaintext",
-    ".prettierrc": "plaintext"
+    ".env": "dotenv",
+    ".prettierrc": "yaml",
+    "*.wxss": "css",
+    "*.wxs": "js"
   },
   "files.autoSave": "afterDelay", //自动保存方式
   "workbench.iconTheme": "material-icon-theme", //主题
@@ -34,48 +37,48 @@
     "statusBar.debuggingBackground": "#c06f98", //状态栏debug背景色
     "statusBar.foreground": "#a2b4bd", //状态栏前景色
     "editorBracketMatch.background": "#5a6f75" //匹配括号背景颜色
-  },
-  "workbench.sideBar.location": "left", //活动栏位置
+  }, //活动栏位置
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "none",
   "explorer.confirmDragAndDrop": false,
   "git.ignoreLegacyWarning": true,
   "git.confirmSync": false,
-  // 使用新的方法会慢半拍？？？
   "terminal.integrated.profiles.windows": {
-    "Git Bash": {
-      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
-      "args": ["-l"] // 保留历史记录
-    },
-    "PowerShell -NoProfile": null,
-    "cmd": {
-      "path": "C:\\WINDOWS\\System32\\cmd.exe"
+    "Bash": {
+      "path": "D:\\Program Files\\Git\\bin\\bash.exe",
+      "args": [
+        "-l"
+      ],
+      "env": {
+        "PROMPT_COMMAND": "history -a"
+      } // 保留历史记录
     }
   },
-  "terminal.integrated.profiles.linux": {
-    "zsh": {
-      "path": "/usr/bin/zsh"
-    },
-    "bash": {
-      "path": "/bin/bash"
-    }
-  },
-  /** 本来应该下面这行就行，不知道为啥出问题，所以加了上面的profiles */
-  "terminal.integrated.defaultProfile.windows": "Git Bash", // 默认使用
-  "terminal.integrated.defaultProfile.linux": "zsh", // 默认使用
-  "debug.console.fontFamily": "Fira Code", //调试控制台的字体
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // "terminal.integrated.tabs.enabled": false, // 使用新的tab布局（不习惯所以关闭）
+  "debug.console.fontFamily": "'Fira Code', 'JetBrains Mono', 'Monaspace Neon', monospace, '思源宋体', Consolas, 'MesloLGS NF'", //调试控制台的字体
+  // "debug.openDebug": "neverOpen",
   "emmet.triggerExpansionOnTab": true, //emmet用tab展开
   "emmet.showAbbreviationSuggestions": true,
   "emmet.excludeLanguages": [], // 要在markdown中使用html必须排除[]
   "emmet.includeLanguages": {
-    "markdown": "html"
+    "markdown": "html",
+    "mdx": "html",
+    "astro": "html",
   },
   "emmet.variables": {
     "lang": "zh-CN"
   },
   "[markdown]": {
     "editor.autoIndent": "full",
-    "editor.quickSuggestions": true //允许md使用候选词
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    } //允许md使用候选词
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -87,7 +90,7 @@
     "editor.insertSpaces": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "go.toolsManagement.autoUpdate": true,
@@ -100,8 +103,14 @@
   "prettier.singleQuote": true, // 默认使用单引号
   /*bracket-pair-colorizer-2插件的配置*/
   "bracket-pair-colorizer-2.showBracketsInGutter": true, //在装订线中显示活动范围括号
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.guides.bracketPairs": "active",
   /*HTML CSS Support插件指定样式表*/
-  "css.fileExtensions": ["css", "scss", "less"],
+  "css.fileExtensions": [
+    "css",
+    "scss",
+    "less"
+  ],
   "liveServer.settings.donotVerifyTags": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -117,13 +126,155 @@
   "npm-intellisense.importQuotes": "'",
   "npm-intellisense.importLinebreak": ";\r\n",
   "npm-intellisense.importDeclarationType": "const",
-  "vsintellicode.features.python.deepLearning": "enabled",
   "C_Cpp.updateChannel": "Insiders",
   "winopacity.opacity": 235,
   "cssrem.rootFontSize": 80,
   "svg.preview.mode": "svg",
-  "workbench.colorTheme": "Monokai",
   "editor.linkedEditing": true,
-  "remote.SSH.remotePlatform": {},
-  "remote.SSH.useLocalServer": true
+  "remote.SSH.remotePlatform": {
+    "wsl": "linux",
+    "6x": "linux"
+  },
+  "C_Cpp.clang_format_style": "Visual Studio",
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化软件
+  "files.eol": "\n", // 文件换行符默认lf
+  "editor.wordWrap": "wordWrapColumn", // 设置编辑器根据设置的列宽换行，有利于prettier忽略的
+  "editor.wordWrapColumn": 120, // 设置编辑器最大列为120
+  "editor.rulers": [
+    120
+  ],
+  "remote.SSH.suppressWindowsSshWarning": true,
+  "editor.inlineSuggest.enabled": true,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hant": true
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "TEMP"
+  ],
+  "windowColors.🌈 DeleteSettingsFileUponExit": true,
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "eslint.probe": [
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "[python]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "eeyore.yapf",
+    "editor.formatOnType": false,
+  },
+  "Codegeex.Explanation.LanguagePreference": "中文",
+  "python.analysis.completeFunctionParens": true,
+  "Codegeex.EnableExtension": true,
+  "Codegeex.Privacy": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  // "deno.enable": true
+  "markdown.extension.toc.levels": "2..6",
+  "git.terminalAuthentication": false,
+  "workbench.editor.empty.hint": "hidden",
+  "tabnine.experimentalAutoImports": true,
+  "cSpell.userWords": [
+    "Bilibili",
+    "catlair",
+    "frontmatter",
+    "pinia",
+    "Roomid",
+    "Serveless",
+    "vitepress",
+    "vitpress",
+    "vueuse"
+  ],
+  "git.autofetch": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.guides.indentation": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.lineNumbers": "relative",
+  "editor.unfoldOnClickAfterEndOfLine": true,
+  "background.windowBackgrounds": [
+    "d:/Users/Pictures/vscode/window/93745433_p0_master1200.jpg",
+    "d:/Users/Pictures/vscode/window/**"
+  ],
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.onSave": true,
+  "errorLens.exclude": [
+    "\".*\": Unknown word"
+  ],
+  "cSpell.ignoreRegExpList": [
+    "string",
+    "CStyleComment"
+  ],
+  "Lingma.cloudModelManualTriggerGenerateLength": "long",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+  },
+  "dart.devToolsBrowser": "default",
+  "dart.env": {
+    "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+    "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "typescript": "tsx",
+  },
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "oxc_language_server.enable": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "prisma.showPrismaDataPlatformNotification": false,
+  "workbench.editor.sharedViewState": true,
+  "Lingma.cloudModelAutoTriggerDisplayRule": true,
+  "Lingma.cloudModelAutoTriggerGenerateLength": "medium",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "diffEditor.maxComputationTime": 0,
+  "[mdx]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
 }
