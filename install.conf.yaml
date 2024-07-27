@@ -19,6 +19,9 @@
     # alacritty
     ~/.config/alacritty: alacritty
 
+    # kitty
+    ~/.config/kitty/kitty.conf: kitty/kitty.conf
+
     # ranger
     ~/.config/ranger/rifle.conf: ranger/rifle.conf
     ~/.config/ranger/rc.conf: ranger/rc.conf
