@@ -12,7 +12,6 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="可用别名: "
 export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(ls ll rm la vim vi ra =)
 export NVM_AUTO_USE=true
-# export RANGER_ZLUA=$HOME/.zinit/plugins/skywind3000---z.lua/z.lua
 
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"

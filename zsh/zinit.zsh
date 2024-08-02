@@ -6,9 +6,6 @@
 zinit light-mode depth"1" for \
   romkatv/zsh-defer
 
-zinit wait lucid depth"1" atload"zicompinit; zicdreplay" blockf for \
-  zsh-users/zsh-completions
-
 zinit light-mode for \
  OMZL::completion.zsh \
  OMZL::key-bindings.zsh
@@ -41,6 +38,21 @@ zinit wait lucid depth'1' for \
 
 #                                  lukechilds/zsh-nvm \
 
+zinit ice atclone"./zplug.zsh" atpull"%atclone"
+zinit light g-plane/pnpm-shell-completion
+
+zinit wait lucid depth"1" atload"zicompinit; zicdreplay" blockf for \
+  zsh-users/zsh-completions
+
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
+
+# 应用程序
+zinit ice lucid wait"2" from"gh-r" as"program" mv"delta* -> delta" pick"delta/delta"
+zinit light dandavison/delta
+
+zinit ice lucid wait from"gh-r" as"program" \
+                    pick"zoxide/zoxide" \
+                    atload'eval "$(zoxide init --cmd cd zsh)"'
+zinit light ajeetdsouza/zoxide

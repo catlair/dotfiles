@@ -25,9 +25,7 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-alias j='__zoxide_z'
-alias ji='__zoxide_zi'
-PRINT_ALIAS_IGNORE_ALIASES+=(j ji)
+PRINT_ALIAS_IGNORE_ALIASES+=()
 
 if builtin command -v nvim > /dev/null 2>&1 ; then
     alias vim="nvim"
