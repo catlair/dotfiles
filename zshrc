@@ -30,10 +30,6 @@ source ~/.config/zsh/zshrc
 # zsh-defer -c '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
 zsh-defer -c 'eval $(thefuck --alias)'
 
-if (( $+commands[zoxide] )); then
-  zsh-defer -c 'eval "$(zoxide init --no-aliases zsh)"'
-fi
-
 # zprof
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -48,3 +44,5 @@ export PATH="$DPRINT_INSTALL/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "/home/ruomi/.wasmedge/env"

@@ -17,6 +17,9 @@ zinit wait"1" light-mode lucid for \
 zinit ice lucid wait depth'1' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
 zinit light junegunn/fzf
 
+zinit ice wait lucid depth'1' multisrc"zsh-abbr.zsh"
+zinit light olets/zsh-abbr
+
 # Plugins
 zinit wait"1" lucid depth"1" light-mode for \
   arzzen/calc.plugin.zsh \
@@ -54,5 +57,5 @@ zinit light dandavison/delta
 
 zinit ice lucid wait from"gh-r" as"program" \
                     pick"zoxide/zoxide" \
-                    atload'eval "$(zoxide init --cmd cd zsh)"'
+                    atload'eval "$(zoxide init --cmd j zsh)"'
 zinit light ajeetdsouza/zoxide

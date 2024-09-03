@@ -26,8 +26,6 @@
     ~/.config/ranger/rifle.conf: ranger/rifle.conf
     ~/.config/ranger/rc.conf: ranger/rc.conf
     ~/.config/ranger/commands.py: ranger/commands.py
-    # ~/.config/ranger/plugins/ranger_zlua.py: ranger/plugins/ranger_zlua.py
-    #~/.config/ranger/plugins/zoxide: ranger/plugins/zoxide
 
     # neofetch
     ~/.config/neofetch: neofetch
@@ -35,11 +33,22 @@
     # zsh
     ~/.zshrc: zshrc
     ~/.config/zsh: zsh
+    ~/.config/zsh-abbr/user-abbreviations: zsh/user-abbreviations
+
+    # bash
+    ~/.bashrc: bash/bashrc
+    ~/.bash_profile: bash/bash_profile
+
+    # fish
+    ~/.config/fish: fish
+
+    # snipaste
+    ~/.snipaste/config.ini: snipaste/config.ini
 
     # vscode
-    ~/.config/Code/User/snippets: code/snippets
-    ~/.config/Code/User/keybindings.json: code/keybindings.json
-    ~/.config/Code/User/settings.json: code/settings.json
+    #~/.config/Code/User/snippets: code/snippets
+    #~/.config/Code/User/keybindings.json: code/keybindings.json
+    #~/.config/Code/User/settings.json: code/settings.json
 
     # fonts
     ~/.local/share/fonts/MesloLGS NF: fonts/MesloLGS NF
@@ -50,5 +59,10 @@
       if: '[ $DESKTOP_SESSION = deepin ]'
 
     # fcitx5
-    ~/.local/share/fcitx5/pinyin/dictionaries: fcitx5/pinyin/dictionaries
-    ~/.config/fcitx5: fcitx5/config
+    # ~/.local/share/fcitx5/pinyin/dictionaries: fcitx5/pinyin/dictionaries
+    # ~/.config/fcitx5: fcitx5/config
+
+    ~/.config/hypr: hypr
+    ~/.config/waybar: waybar
+    ~/.config/rofi: rofi
+    ~/.config/mako: mako

@@ -13,6 +13,8 @@ export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
 export PRINT_ALIAS_IGNORE_ALIASES=(ls ll rm la vim vi ra =)
 export NVM_AUTO_USE=true
 
+export ABBR_SET_EXPANSION_CURSOR=1
+
 ## History file configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
