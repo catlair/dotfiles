@@ -19,9 +19,6 @@
     # alacritty
     ~/.config/alacritty: alacritty
 
-    # kitty
-    ~/.config/kitty/kitty.conf: kitty/kitty.conf
-
     # ranger
     ~/.config/ranger/rifle.conf: ranger/rifle.conf
     ~/.config/ranger/rc.conf: ranger/rc.conf
@@ -42,27 +39,5 @@
     # fish
     ~/.config/fish: fish
 
-    # snipaste
-    ~/.snipaste/config.ini: snipaste/config.ini
-
-    # vscode
-    #~/.config/Code/User/snippets: code/snippets
-    #~/.config/Code/User/keybindings.json: code/keybindings.json
-    #~/.config/Code/User/settings.json: code/settings.json
-
     # fonts
     ~/.local/share/fonts/MesloLGS NF: fonts/MesloLGS NF
-
-    # deepin 标题栏
-    ~/.local/share/deepin/themes/deepin:
-      path: other/deepin
-      if: '[ $DESKTOP_SESSION = deepin ]'
-
-    # fcitx5
-    # ~/.local/share/fcitx5/pinyin/dictionaries: fcitx5/pinyin/dictionaries
-    # ~/.config/fcitx5: fcitx5/config
-
-    ~/.config/hypr: hypr
-    ~/.config/waybar: waybar
-    ~/.config/rofi: rofi
-    ~/.config/mako: mako

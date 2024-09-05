@@ -37,3 +37,6 @@ setopt globdots
 
 # Use vi key bindings in ZSH
 setopt vi
+
+export HOST=127.0.0.1
+export PATH="$PATH:/snap"

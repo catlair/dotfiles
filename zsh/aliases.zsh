@@ -34,6 +34,10 @@ fi
 alias trm="trash-put"
 alias rm="rm -i"
 
+if builtin command -v eza > /dev/null 2>&1 ; then
+   alias exa="eza"
+fi
+
 if builtin command -v exa > /dev/null 2>&1 ; then
   ## 需要安装 exa
   # general use
