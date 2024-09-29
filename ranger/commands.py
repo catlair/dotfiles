@@ -62,6 +62,7 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
+
 # 创建一个目录并打开它
 class mkcd(Command):
     """
@@ -86,7 +87,8 @@ class mkcd(Command):
 
             for m in re.finditer('[^/]+', dirname):
                 s = m.group(0)
-                if s == '..' or (s.startswith('.') and not self.fm.settings['show_hidden']):
+                if s == '..' or (s.startswith('.')
+                                 and not self.fm.settings['show_hidden']):
                     self.fm.cd(s)
                 else:
                     ## We force ranger to load content before calling `scout`.
@@ -94,6 +96,7 @@ class mkcd(Command):
                     self.fm.execute_console('scout -ae ^{}$'.format(s))
         else:
             self.fm.notify("文件或目录已存在", bad=True)
+
 
 # 与 fzf 集成
 class fzf_select(Command):
@@ -125,19 +128,19 @@ class fzf_select(Command):
             exclude = "--no-ignore-vcs --exclude '.git' --exclude '*.py[co]' --exclude '__pycache__'"
             only_directories = ('--type directory' if self.quantifier else '')
             fzf_default_command = '{} --follow {} {} {} --color=always'.format(
-                fd, hidden, exclude, only_directories
-            )
+                fd, hidden, exclude, only_directories)
         else:
-            hidden = ('-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
+            hidden = ('-false' if self.fm.settings.show_hidden else
+                      r"-path '*/\.*' -prune")
             exclude = r"\( -name '\.git' -o -iname '\.*py[co]' -o -fstype 'dev' -o -fstype 'proc' \) -prune"
             only_directories = ('-type d' if self.quantifier else '')
             fzf_default_command = 'find -L . -mindepth 1 {} -o {} -o {} -print | cut -b3-'.format(
-                hidden, exclude, only_directories
-            )
+                hidden, exclude, only_directories)
 
         env = os.environ.copy()
         env['FZF_DEFAULT_COMMAND'] = fzf_default_command
-        env['FZF_DEFAULT_OPTS'] = '--height=40% --layout=reverse --ansi --preview="{}"'.format('''
+        env['FZF_DEFAULT_OPTS'] = '--height=40% --layout=reverse --ansi --preview="{}"'.format(
+            '''
             (
                 batcat --color=always {} ||
                 bat --color=always {} ||
@@ -146,8 +149,10 @@ class fzf_select(Command):
             ) 2>/dev/null | head -n 100
         ''')
 
-        fzf = self.fm.execute_command('fzf --no-multi', env=env,
-                                      universal_newlines=True, stdout=subprocess.PIPE)
+        fzf = self.fm.execute_command('fzf --no-multi',
+                                      env=env,
+                                      universal_newlines=True,
+                                      stdout=subprocess.PIPE)
         stdout, _ = fzf.communicate()
         if fzf.returncode == 0:
             selected = os.path.abspath(stdout.strip())
@@ -159,6 +164,7 @@ class fzf_select(Command):
 
 # 压缩文件
 class compress(Command):
+
     def execute(self):
         """ Compress marked files to current directory """
         cwd = self.fm.thisdir
@@ -186,10 +192,15 @@ class compress(Command):
         """ Complete with current folder name """
 
         extension = ['.zip', '.tar.gz', '.rar', '.7z']
-        return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
+        return [
+            'compress ' + os.path.basename(self.fm.thisdir.path) + ext
+            for ext in extension
+        ]
+
 
 # (atool) 下面的命令实现了复制(yy)一个或多个存档文件，然后执行 ":extracthere" 解压到需要的目录。
 class extracthere(Command):
+
     def execute(self):
         """ Extract copied files to current directory """
         copied_files = tuple(self.fm.copy_buffer)
@@ -213,35 +224,40 @@ class extracthere(Command):
         if len(copied_files) == 1:
             descr = "extracting: " + os.path.basename(one_file.path)
         else:
-            descr = "extracting files from: " + os.path.basename(one_file.dirname)
+            descr = "extracting files from: " + os.path.basename(
+                one_file.dirname)
         obj = CommandLoader(args=['aunpack'] + au_flags \
                 + [f.path for f in copied_files], descr=descr)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
 
-# 对于使用 7z 的用户, 可以在添加以下命令后, 选中压缩包然后执行 ":extract" 或通过绑定的快捷键来解压 
+
+# 对于使用 7z 的用户, 可以在添加以下命令后, 选中压缩包然后执行 ":extract" 或通过绑定的快捷键来解压
 class extract(Command):
     """:extract <paths>
     
     Extract archives using 7z
     """
+
     def execute(self):
         import os
-        fail=[]
+        fail = []
         for i in self.fm.thistab.get_selection():
-            ExtractProg='7z x'
+            ExtractProg = '7z x'
             if i.path.endswith('.zip'):
                 # zip encoding issue
-                ExtractProg='unzip -O gbk'
+                ExtractProg = 'unzip -O gbk'
             elif i.path.endswith('.tar.gz'):
-                ExtractProg='tar xvf'
+                ExtractProg = 'tar xvf'
             elif i.path.endswith('.tar.xz'):
-                ExtractProg='tar xJvf'
+                ExtractProg = 'tar xJvf'
             elif i.path.endswith('.tar.bz2'):
-                ExtractProg='tar xjvf'
+                ExtractProg = 'tar xjvf'
             if os.system('{0} "{1}"'.format(ExtractProg, i.path)):
                 fail.append(i.path)
         if len(fail) > 0:
-            self.fm.notify("Fail to extract: {0}".format(' '.join(fail)), duration=10, bad=True)
+            self.fm.notify("Fail to extract: {0}".format(' '.join(fail)),
+                           duration=10,
+                           bad=True)
         self.fm.redraw_window()

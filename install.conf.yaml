@@ -7,14 +7,13 @@
 
 - create:
     - ~/.config
-    - ~/.config/ranger/plugins
 
 - link:
     # git
     ~/.gitconfig: gitconfig
 
     # vim
-    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim: nvim
 
     # alacritty
     ~/.config/alacritty: alacritty
@@ -23,9 +22,7 @@
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
     # ranger
-    ~/.config/ranger/rifle.conf: ranger/rifle.conf
-    ~/.config/ranger/rc.conf: ranger/rc.conf
-    ~/.config/ranger/commands.py: ranger/commands.py
+    ~/.config/ranger: ranger
 
     # neofetch
     ~/.config/neofetch: neofetch
@@ -65,4 +62,4 @@
     ~/.config/hypr: hypr
     ~/.config/waybar: waybar
     ~/.config/rofi: rofi
-    ~/.config/mako: mako
+    # ~/.config/mako: mako
