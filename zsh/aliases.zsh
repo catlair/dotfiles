@@ -35,23 +35,19 @@ alias trm="trash-put"
 alias rm="rm -i"
 
 if builtin command -v eza > /dev/null 2>&1 ; then
-   alias exa="eza"
-fi
-
-if builtin command -v exa > /dev/null 2>&1 ; then
-  ## 需要安装 exa
+  ## 需要安装 eza
   # general use
-  alias ls='exa'                                                          # ls
-  alias l='exa -lbF --git'                                                # list, size, type, git
-  alias ll='exa -lbGF --git'                                             # long list
-  alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-  alias la='exa -lbhaF --icons --git --color-scale'  # all list
-  alias lla='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-  alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+  alias ls='eza'                                                          # ls
+  alias l='eza -lbF --git'                                                # list, size, type, git
+  alias ll='eza -lbGF --git'                                             # long list
+  alias llm='eza -lbGd --git --sort=modified'                            # long list, modified date sort
+  alias la='eza -lbhaF --icons --git --color-scale'  # all list
+  alias lla='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+  alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
 
   # specialty views
-  alias lS='exa -1'                                                              # one column, just names
-  alias lt='exa --tree --level=2'                                         # tree
+  alias lS='eza -1'                                                              # one column, just names
+  alias lt='eza --tree --level=2'                                         # tree
 else
     if ls --color > /dev/null 2>&1 ; then
             alias ls='ls --color -F'

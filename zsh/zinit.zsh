@@ -55,6 +55,12 @@ zinit light romkatv/powerlevel10k
 zinit ice lucid wait"2" from"gh-r" as"program" mv"delta* -> delta" pick"delta/delta"
 zinit light dandavison/delta
 
+zinit ice lucid wait"1" from"gh-r" as"program" \
+      pick"yazi/yazi" \
+      pick"ya/ya" \
+      bpick"*linux*.zip"
+zinit light sxyazi/yazi
+
 zinit ice lucid wait from"gh-r" as"program" \
                     pick"zoxide/zoxide" \
                     atload'eval "$(zoxide init --cmd j zsh)"'
