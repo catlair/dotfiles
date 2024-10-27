@@ -1,6 +1,6 @@
 zsh
 bat
-exa
+eza
 trash-cli
 neovim
 zoxide

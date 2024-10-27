@@ -32,15 +32,18 @@ zinit wait"1" lucid depth"1" light-mode for \
 
 zinit wait lucid depth'1' for \
   as"program" pick"bin/git-fuzzy" bigH/git-fuzzy \
-  atload"zicompinit; zicdreplay"  Aloxaf/fzf-tab \
-  atload"_zsh_autosuggest_start"  zsh-users/zsh-autosuggestions \
-                                  zdharma-continuum/fast-syntax-highlighting
+  atload"zicompinit; zicdreplay"  Aloxaf/fzf-tab
+
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 zinit ice atclone"./zplug.zsh" atpull"%atclone"
 zinit light g-plane/pnpm-shell-completion
-
-zinit wait lucid depth"1" atload"zicompinit; zicdreplay" blockf for \
-  zsh-users/zsh-completions
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth

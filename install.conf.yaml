@@ -22,7 +22,7 @@
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
 
     # ranger
-    ~/.config/ranger: ranger
+    # ~/.config/ranger: ranger
 
     # neofetch
     ~/.config/neofetch: neofetch
